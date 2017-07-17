@@ -10,6 +10,11 @@
 #include "Graphics.h"
 #include "Input.h"
 
+namespace {
+const int FPS = 50;
+const int MAX_FRAME_TIME = 5 * 1000 / FPS;
+}
+
 Game::Game() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	gameLoop();
@@ -23,6 +28,9 @@ void Game::gameLoop() {
 	Graphics graphics;
 	Input input;
 	SDL_Event event;
+
+	int LAST_UPDATE_TIME = SDL_GetTicks();
+
 	while (true) {
 		input.beginNewFrame();
 		if (SDL_PollEvent(&event)) {
@@ -39,6 +47,11 @@ void Game::gameLoop() {
 
 		if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE))
 			return;
+
+		const int CUR_TIME_MS = SDL_GetTicks();
+		int ELAPSED_TIME_MS = CUR_TIME_MS - LAST_UPDATE_TIME;
+		update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
+		LAST_UPDATE_TIME = CUR_TIME_MS;
 
 	}
 
