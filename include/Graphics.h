@@ -31,7 +31,6 @@ public:
 	SDL_Renderer* getRenderer() const;
 
 private:
-	const std::pair<const int, const int> WIN_DIM = { 640, 480 };
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 

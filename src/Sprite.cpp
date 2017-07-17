@@ -7,6 +7,7 @@
 
 #include "Sprite.h"
 #include "Graphics.h"
+#include "Globals.h"
 #include <iostream>
 
 Sprite::Sprite() {
@@ -34,7 +35,7 @@ void Sprite::update() {
 }
 
 void Sprite::draw(Graphics& graphics, int x, int y) {
-	SDL_Rect destRectangle = { x, y, sourceRect.w, sourceRect.h };
+	SDL_Rect destRectangle = { x, y, sourceRect.w * globals::SPRITE_SCALE, sourceRect.h * globals::SPRITE_SCALE };
 	graphics.blitSurface(spriteSheet, &sourceRect, &destRectangle);
 
 }
