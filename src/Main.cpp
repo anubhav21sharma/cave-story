@@ -6,12 +6,10 @@
  */
 
 #include <iostream>
-#include "Graphics.h"
+#include "Game.h"
 
 int main() {
-	Graphics graphics;
-	while (1) {
-	}
+	Game game;
 	return 0;
 }
 
