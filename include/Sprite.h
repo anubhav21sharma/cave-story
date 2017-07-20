@@ -22,11 +22,9 @@ public:
 	void draw(Graphics &graphics, int x, int y);
 
 protected:
+	float x, y;
 	SDL_Rect sourceRect;
 	SDL_Texture *spriteSheet;
-
-private:
-	float x, y;
 };
 
 #endif /* INCLUDE_SPRITE_H_ */

@@ -68,12 +68,6 @@ void AnimatedSprite::draw(Graphics& graphics, int x, int y) {
 	}
 }
 
-void AnimatedSprite::setupAnimations() {
-	addAnimation(3, 0, 0, "RunLeft", 16, 16, { 0, 0 });
-	addAnimation(3, 0, 16, "RunRight", 16, 16, { 0, 0 });
-
-}
-
 void AnimatedSprite::resetAnimation() {
 	animations.clear();
 	offsets.clear();
@@ -88,6 +82,6 @@ void AnimatedSprite::setVisible(bool visible) {
 	this->visible = visible;
 }
 
-void AnimatedSprite::animationDone(std::string currentAnimation) {
-
-}
+//void AnimatedSprite::animationDone(std::string currentAnimation) {
+//
+//}

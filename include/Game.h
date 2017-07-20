@@ -8,7 +8,8 @@
 #ifndef INCLUDE_GAME_H_
 #define INCLUDE_GAME_H_
 
-#include <AnimatedSprite.h>
+#include <Level.h>
+#include <Player.h>
 
 class Graphics;
 
@@ -19,7 +20,8 @@ public:
 
 private:
 
-	AnimatedSprite player;
+	Player player;
+	Level level;
 
 	void gameLoop();
 	void draw(Graphics &graphics);
